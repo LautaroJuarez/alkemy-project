@@ -14,11 +14,19 @@
 .logo{
     font-size: 2rem;
     color: white;
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
 }
+
 .fa-bell{
     font-size: 1.7rem;
     color: white;
     margin: 0px 20px;
 }
 }
+@media (min-width: 728px){
+   .navbar{ height: 80px;}
+    }
+
 

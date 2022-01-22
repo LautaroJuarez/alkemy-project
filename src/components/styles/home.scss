@@ -5,56 +5,63 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .amount-in-count {
-    width: 70%;
-    height: 60px;
-    margin: 40px;
-    border: 1px solid #c4c4c4;
-    border-radius: 5px;
-    .amount-number {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      h2 {
-        font-size: 2rem;
-        margin-right: 20px;
-      }
-      i {
-        font-size: 1.5rem;
+  .section-left-desktop {
+    width: 100%;
+    margin: 30px 40px;
+    .amount-in-count {
+      height: 60px;
+      margin: 40px;
+      border: 1px solid #c4c4c4;
+      border-radius: 5px;
+      .amount-number {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+          font-size: 2rem;
+          margin-right: 20px;
+        }
+        .eye {
+          font-size: 1.5rem;
+        }
+        .eye-active {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
       }
     }
-  }
-  .options-with-amount {
-    width: 70%;
-    height: 60px;
-    margin: 0px 40px;
-    border: 1px solid #c4c4c4;
-    border-radius: 5px;
-    .options-items-container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .options-item {
-        font-size: 0.9rem;
-        list-style: none;
-        width: 25%;
-        height: 60%;
-        border-right: 1px solid #c4c4c4;
-        text-align: center;
-        padding: 5px;
-      }
-      .options-item:last-child {
-        border: none;
+    .options-with-amount {
+      height: 60px;
+      margin: 0px 40px;
+      border: 1px solid #c4c4c4;
+      border-radius: 5px;
+      .options-items-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .options-item {
+          font-size: 0.9rem;
+          list-style: none;
+          width: 25%;
+          height: 60%;
+          border-right: 1px solid #c4c4c4;
+          text-align: center;
+          padding: 5px;
+        }
+        .options-item:last-child {
+          border: none;
+        }
       }
     }
   }
 }
 .records-account {
-  width: 70%;
+  width: 84%;
+  min-height: 400px;
   margin: 30px 40px;
   border: 1px solid #c4c4c4;
   border-radius: 5px;
@@ -73,6 +80,48 @@
       justify-content: space-between;
       align-items: center;
       list-style: none;
+      .trash-icon {
+        color: red;
+        font-size: 1.5rem;
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 728px) {
+  .home-container {
+    display: flex;
+    flex-direction: row;
+    .section-left-desktop{
+      min-height: 400px;
+      max-width: 400px;
+      border: 1px solid #c4c4c4;
+      border-radius: 5px;
+      .options-with-amount {
+        height: auto;
+        margin: 0px 40px;
+        border: 1px solid #c4c4c4;
+        border-radius: 5px;
+      .options-items-container {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .options-item {
+          width: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border: none;
+          border-bottom: 1px solid #c4c4c4;
+        }
+      }
+    }
     }
   }
 }

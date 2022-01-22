@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/formContainer.scss'
 
 function Register() {
@@ -20,7 +21,7 @@ function Register() {
      <div className='inputs-container'>
      <button className='input-item button' type="submifikle">Enviar</button>
      </div>
-     <p className='register-to-login'>¿Ya tienes una cuenta?</p>  
+      <Link to='/login' className='link'><p className='register-to-login'> ¿Ya tienes una cuenta?</p></Link>  
    </form>
   );
 }
