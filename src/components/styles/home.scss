@@ -95,6 +95,7 @@
   .home-container {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     .section-left-desktop{
       min-height: 400px;
       max-width: 400px;
@@ -123,5 +124,11 @@
       }
     }
     }
+    .records-account {
+      .records-items-container {
+        .item-records{height: 60px;}
+      }
+    }
+ 
   }
 }

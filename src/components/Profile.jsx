@@ -1,6 +1,25 @@
+import axios from "axios";
+import { useState } from "react";
 import "./styles/profile.scss";
 
 function Profile() {
+
+  const [body, setBody] = useState({name:'', email:'', password:'', amount:0});
+
+  const handleChange = ({target}) => {
+    const {name, value} = target;
+    setBody({
+      ...body, 
+      [name] : value
+    })
+  }
+
+  const handleSubmit = e => {
+e.preventDefault();
+axios.post('http://localhost:3001/api/register', body)
+.then(({data}) => console.log(data))
+  }
+
   return (
     <main className="profile-user-data-container">
       <div className="profile-user-image">
@@ -14,7 +33,7 @@ function Profile() {
       <h3>Datos Personales</h3>
       <br />
       <div className="profile-user-info">
-        <section>
+      <section>
           <div className="item-data-user">NOMBRE: Jessie Pinkman</div>
           <div className="item-data-user">EMAIL: Pinkman@gmail.com</div>
           <div className="item-data-user">Contraseña: 123456</div>
@@ -25,6 +44,7 @@ function Profile() {
           <div className="item-data-user">PROVINCIA: Nuevo Mexico</div>
           <div className="item-data-user">PAÍS: united states</div>
         </section>
+    
       </div>
     </main>
   );

@@ -5,16 +5,16 @@ const routes = express.Router();
 routes.get("/", (req, res) => {
   req.getConnection((err, conn) => {
     if (err) return res.send(err);
-    conn.query('SELECT * FROM challenge.records', (err, rows) => {
+    conn.query('SELECT * FROM challenge.user', (err, rows) => {
       if (err) return res.send(err);
       res.json(rows);
     });
   });
 });
-routes.post("/", (req, res) => {
+routes.post("/register", (req, res) => {
   req.getConnection((err, conn) => {
     if (err) return res.send(err);
-    conn.query('INSERT INTO challenge.records set ?', [req.body], (err, rows) => {
+    conn.query('INSERT INTO challenge.user set ?', [req.body], (err, rows) => {
       if (err) return res.send(err);
       res.send('Record inserted!');
     });
@@ -35,6 +35,15 @@ routes.put("/:id", (req, res) => {
     conn.query('UPDATE library.books set ? WHERE id = ?', [req.body,  req.params.id], (err, rows) => {
       if (err) return res.send(err);
       res.send('Record updated!');
+    });
+  });
+});
+routes.get("/lastmovements", (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.send(err);
+    conn.query('SELECT * FROM challenge.records', (err, rows) => {
+      if (err) return res.send(err);
+      res.json(rows);
     });
   });
 });
